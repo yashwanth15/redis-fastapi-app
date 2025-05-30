@@ -18,7 +18,7 @@ consumer = Consumer(conf)
 topic = os.getenv("KAFKA_TOPIC")
 
 consumer.subscribe([topic])
-print(f"📥 Listening to topic '{topic}'...")
+print(f"Listening to topic '{topic}'...")
 
 try:
     while True:
@@ -26,9 +26,9 @@ try:
         if msg is None:
             continue
         if msg.error():
-            print("⚠️", msg.error())
+            print(msg.error())
         else:
-            print(f"📨 Received message: {msg.value().decode('utf-8')}")
+            print(f"Received message: {msg.value().decode('utf-8')}")
 except KeyboardInterrupt:
     pass
 finally:

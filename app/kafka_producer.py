@@ -17,9 +17,9 @@ topic = os.getenv("KAFKA_TOPIC")
 
 def delivery_report(err, msg):
     if err is not None:
-        print('❌ Message delivery failed:', err)
+        print('Message delivery failed:', err)
     else:
-        print(f'✅ Message delivered to {msg.topic()} [{msg.partition()}]')
+        print(f'Message delivered to {msg.topic()} [{msg.partition()}]')
 
 while True:
     value = input("Enter message to publish (or 'exit'): ")
